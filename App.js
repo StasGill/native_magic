@@ -27,7 +27,7 @@ export default function App() {
       setState({ ...initialState });
       return;
     }
-    const random = Math.floor(Math.random() * 81);
+    const random = Math.floor(Math.random() * 161);
     setState({ newWish: [wish[random]], warning: true });
   };
 
@@ -64,8 +64,12 @@ export default function App() {
           {state.newWish ? (
             <Text style={styles.text}>{state.newWish}</Text>
           ) : null}
-          {/* <Text style={styles.text}>{state.newWish}</Text> */}
         </TouchableOpacity>
+        <View style={styles.helpTextContainer}>
+          <Text style={styles.helpText}>
+            Коснитесь шара что бы получить предсказание!
+          </Text>
+        </View>
       </ImageBackground>
     </View>
   );
@@ -81,8 +85,8 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "white",
-    fontSize: 42,
-    lineHeight: 84,
+    fontSize: 35,
+    lineHeight: 54,
     fontWeight: "bold",
     textAlign: "center",
     backgroundColor: "#000000c0",
@@ -93,5 +97,18 @@ const styles = StyleSheet.create({
   button: {
     flex: 1,
     justifyContent: "center",
+  },
+  helpTextContainer: {
+    position: "absolute",
+    bottom: 100,
+    justifyContent: "center",
+    flexDirection: "row",
+    width: "100%",
+    textAlign: "center",
+  },
+  helpText: {
+    color: "white",
+    fontWeight: "bold",
+    fontStyle: "italic",
   },
 });
