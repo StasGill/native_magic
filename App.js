@@ -27,7 +27,7 @@ export default function App() {
       setState({ ...initialState });
       return;
     }
-    const random = Math.floor(Math.random() * 161);
+    const random = Math.floor(Math.random() * 246);
     setState({ newWish: [wish[random]], warning: true });
   };
 
